@@ -1,0 +1,32 @@
+ALGORITHM Problem1
+//solution 1
+VAR
+    sum:integer:=0;
+    set1,set2 : ARRAY_OF integer[10];
+    i,j:integer;
+    found:BOOLEAN;
+BEGIN
+    FOR i FROM 0 TO length.set1 STEP step  DO
+        FOR j FROM 0 TO length.set2 STEP step  DO
+            IF (set1[i]=set2[j]) THEN
+                found=true;
+            END_IF
+            
+        END_FOR
+        IF (found=false) THEN
+                sum:=sum+set1[i];
+            END_IF
+    END_FOR
+    FOR j FROM 0 TO length.set2 STEP step  DO
+        FOR i FROM 0 TO length.set1 STEP step  DO
+            IF (set2[j]=set1[i]) THEN
+                found=true;
+            END_IF
+            
+        END_FOR
+        IF (found=false) THEN
+                sum:=sum+set2[i];
+            END_IF
+    END_FOR
+
+END
